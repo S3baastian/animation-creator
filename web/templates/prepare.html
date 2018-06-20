@@ -1,17 +1,17 @@
-<html>
-  <head>
-    <title>Welcome</title>
-  </head>
-  <body>
-   <h3>You are going to create animation with following photos:</h3>
+
+{% extends 'layout.html' %}
+
+{% block body %}
+   <h3 class="header center orange-text">Dla tych plików zostanie wykonana animacja</h3>
    <ul>
      {% for photo in photos %}
        <li>{{photo}}</li>
      {% endfor%}
    </ul>
+   <h3 class="header center orange-text">Podaj adres e-mail i nacisnij guzik</h3>
    <form method="POST" action="/proceed">
      <input name="email" type="email"/>
-     <button type="submit">let's do this</button>
+     <button type="submit" class="btn waves-effect waves-light">Wyślij email</button>
    </form>
-  </body>
-</html>
+   
+{% endblock %}
